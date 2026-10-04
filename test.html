@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>悬浮便签 · 本地验证页</title>
+    <style>
+      body { font: 14px/1.7 -apple-system, "PingFang SC", sans-serif; margin: 40px; max-width: 720px; }
+      h1 { font-size: 20px; }
+      p { color: #555; }
+      .box { border: 1px solid #ddd; border-radius: 10px; padding: 14px 16px; margin: 16px 0; }
+      code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>悬浮便签 · 本地验证页</h1>
+    <p>
+      本页直接以脚本方式加载 <code>content.js</code>（无扩展环境时自动回退
+      <code>localStorage</code>），用来在没有装扩展的情况下验证便签的交互。
+    </p>
+    <div class="box">
+      <p>验证清单：</p>
+      <ol>
+        <li>右下角出现便签面板（未记录时显示空态）</li>
+        <li>输入框输入文字 → <b>Enter</b> 添加；<b>Shift+Enter</b> 换行</li>
+        <li>拖动顶部标题栏 → 面板移动；松手贴到屏幕边缘时会自动吸边</li>
+        <li>点 ▾ 收起成小胶囊；<b>胶囊本身也能拖</b>，拖完位置被记住</li>
+        <li><b>点面板外任意处 / 按 Esc</b> → 自动收起成胶囊；点 📌 钉住后不再自动收起</li>
+        <li>输入到一半去勾选/删除别的条目 → 草稿不丢、光标还在</li>
+        <li>每条可勾选完成 / 复制 / 编辑 / 删除</li>
+        <li>「复制全部」生成给 AI 的清单（含站点与页面路径）</li>
+        <li>刷新页面 → 记录与位置仍在</li>
+      </ol>
+    </div>
+    <p>提示：在被测应用里使用时，便签内的键盘事件不会冒泡到页面，不会误触应用快捷键。</p>
+
+    <script src="./content.js"></script>
+  </body>
+</html>
